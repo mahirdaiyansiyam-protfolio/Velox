@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>VELOX — AI Model Studio | Royalty Visual Agency</title>
-    <!-- Google Fonts: Royalty pairing -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>VELOX — AI Model Studio | Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Lora:wght@400;500;600&amp;family=Jost:wght@300;400;500;600" rel="stylesheet" />
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background-color: #0A0715;
             color: #FCFAF7;
@@ -20,14 +18,10 @@
             overflow-x: hidden;
             cursor: default;
         }
-
-        /* Smooth scroll */
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-
-        /* ----- ROYALTY COLOR SYSTEM ----- */
         :root {
             --bg-primary: #0A0715;
             --bg-secondary: #130F1F;
@@ -39,18 +33,14 @@
             --border-gold: rgba(212, 175, 55, 0.25);
             --transition-smooth: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-
-        /* Typography */
         h1, h2, h3, .heading-font, .stat-number {
             font-family: 'Cinzel', serif;
             font-weight: 500;
         }
-
         .italic-luxury {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
         }
-
         .section-label {
             font-family: 'Jost', sans-serif;
             font-size: 0.7rem;
@@ -60,21 +50,16 @@
             margin-bottom: 1rem;
             display: inline-block;
         }
-
-        /* Layout utility */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 4rem;
         }
-
         section {
             padding: 110px 0;
             position: relative;
             z-index: 2;
         }
-
-        /* Navbar */
         nav {
             position: fixed;
             top: 0;
@@ -100,6 +85,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 1px;
+            color: var(--gold);
         }
         .logo span {
             color: var(--gold);
@@ -140,11 +126,6 @@
             background: #b38f2c;
             transform: scale(0.97);
         }
-        .mobile-menu-btn {
-            display: none;
-        }
-
-        /* Hero */
         .hero {
             min-height: 100vh;
             position: relative;
@@ -156,69 +137,56 @@
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 800px;
+            max-width: 900px;
         }
-        .hero-tag {
-            font-family: 'Jost', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 1.2rem;
+        .hero-tag, .hero-headline, .hero-bottom {
             opacity: 0;
             transform: translateY(36px);
             transition: opacity 0.75s ease, transform 0.75s ease;
         }
-        .hero-tag.in {
+        .hero-tag.in, .hero-headline.in, .hero-bottom.in {
             opacity: 1;
             transform: translateY(0);
         }
         .hero-headline {
             font-family: 'Cinzel', serif;
-            font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+            font-size: clamp(3rem, 7vw, 5.8rem);
             font-weight: 700;
-            line-height: 1.02;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.75s ease 0.1s, transform 0.75s ease 0.1s;
-        }
-        .hero-headline.in {
-            opacity: 1;
-            transform: translateY(0);
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            transition-delay: 0.1s;
         }
         .hero-headline i {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             color: var(--gold);
         }
+        .hero-desc {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            max-width: 600px;
+        }
+        .hero-desc .highlight {
+            color: var(--gold);
+            font-weight: 500;
+        }
         .hero-bottom {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
             flex-wrap: wrap;
             gap: 2rem;
+            transition-delay: 0.2s;
             margin-top: 2rem;
-            opacity: 0;
-            transform: translateY(36px);
-            transition: opacity 0.75s ease 0.2s, transform 0.75s ease 0.2s;
-        }
-        .hero-bottom.in {
-            opacity: 1;
-            transform: translateY(0);
         }
         .stats {
             display: flex;
             gap: 2.5rem;
         }
-        .stat-item {
-            text-align: center;
-        }
         .stat-number {
             font-size: 2.2rem;
             font-weight: 700;
             color: var(--gold);
-            font-family: 'Cinzel', serif;
         }
         .stat-label {
             font-family: 'Jost', sans-serif;
@@ -250,8 +218,6 @@
             50% { opacity: 1; height: 40px; }
             100% { opacity: 0.3; height: 20px; }
         }
-
-        /* Reveal animations */
         .rv, .rv-left, .rv-right {
             opacity: 0;
             transition: opacity 0.7s ease, transform 0.7s ease;
@@ -263,23 +229,21 @@
             opacity: 1;
             transform: translate(0, 0);
         }
-
-        /* Cards + grids */
-        .problem-grid, .services-grid, .why-grid, .offerings-grid {
+        .problem-grid, .services-grid, .why-grid {
             display: grid;
             gap: 1px;
             background: var(--border-gold);
             margin-top: 3rem;
         }
-        .problem-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
+        .problem-grid { grid-template-columns: repeat(4, 1fr); }
+        .services-grid { grid-template-columns: repeat(3, 1fr); }
         .p-card, .svc-card, .why-card {
             background: var(--bg-secondary);
             padding: 2rem 1.5rem;
             transition: var(--transition-smooth);
             position: relative;
             transform-style: preserve-3d;
+            text-align: center;
         }
         .p-card:hover, .svc-card:hover {
             transform: perspective(700px) rotateY(0deg) rotateX(0deg) scale(1.02);
@@ -288,14 +252,18 @@
         .card-number {
             font-size: 3rem;
             font-family: 'Cinzel', serif;
-            color: rgba(212, 175, 55, 0.25);
+            color: rgba(212, 175, 55, 0.3);
             line-height: 1;
         }
         .p-card h3, .svc-card h3 {
             font-family: 'Cinzel', serif;
             margin: 1rem 0 0.5rem;
+            color: var(--gold);
         }
-        /* bottom sweep */
+        .p-card p, .svc-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
         .p-card::after, .svc-card::after, .why-card::after {
             content: '';
             position: absolute;
@@ -311,23 +279,15 @@
         .p-card:hover::after, .svc-card:hover::after, .why-card:hover::after {
             transform: scaleX(1);
         }
-
-        .services-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .svc-card {
-            background: var(--bg-tertiary);
-            position: relative;
-            overflow: hidden;
-        }
         .svc-card svg {
             stroke: var(--gold);
             margin-bottom: 1rem;
+            width: 44px;
+            height: 44px;
         }
-
-        /* Tabs Showcase */
         .showcase-tabs {
             display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             margin: 2rem 0;
             border-bottom: 1px solid var(--border-gold);
@@ -356,89 +316,43 @@
         .tab-content.active-tab {
             display: block;
         }
-        .model-grid {
-            display: grid;
-            gap: 2px;
-            background: var(--border-gold);
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 1rem;
         }
-        .slot {
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            border-radius: 16px;
+            overflow: hidden;
             background: #1A142D;
-            aspect-ratio: 3/4;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            transition: 0.2s;
-            cursor: default;
-            font-family: 'Jost', sans-serif;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-        }
-        .slot span.coming {
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            border: 1px solid var(--gold);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            background: rgba(0,0,0,0.5);
-        }
-        .slot .slot-number {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            opacity: 0.5;
-        }
-        .slot .slot-label {
-            position: absolute;
-            bottom: 12px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            background: rgba(0,0,0,0.6);
-            padding: 5px;
-            opacity: 0;
-            transition: 0.2s;
-        }
-        .slot:hover .slot-label {
-            opacity: 1;
-        }
-        /* 6x4 grid */
-        .grid-6x4 {
-            grid-template-columns: repeat(6, 1fr);
-        }
-        .grid-6x2 {
-            grid-template-columns: repeat(6, 1fr);
-        }
-        .grid-4x2 {
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .sample-slot {
-            aspect-ratio: 1/1;
-            background: #130F1F;
-            border: 1px solid var(--gold);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            border: 1px solid var(--border-gold);
+            transition: transform 0.2s ease, border-color 0.2s;
             position: relative;
         }
-        .sample-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            font-size: 0.55rem;
-            background: var(--gold);
-            color: #0A0715;
-            padding: 2px 8px;
+        .masonry-item:hover {
+            transform: scale(1.01);
+            border-color: var(--gold);
         }
-
-        /* Process sticky */
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+        @media (max-width: 900px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        .custom-model-card {
+            background: linear-gradient(135deg, #1A142D 0%, #0A0715 100%);
+            border: 1px solid var(--gold);
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
         .process-wrapper {
             display: flex;
             gap: 4rem;
@@ -449,9 +363,7 @@
             height: fit-content;
             flex: 1;
         }
-        .process-steps {
-            flex: 1;
-        }
+        .process-steps { flex: 1; }
         .step-row {
             padding: 2rem 0;
             border-top: 1px solid var(--border-gold);
@@ -468,8 +380,6 @@
             display: flex;
             justify-content: space-between;
         }
-
-        /* CTA Light */
         .cta-light {
             background: #FCFAF7;
             color: #0A0715;
@@ -477,68 +387,29 @@
         .cta-card {
             background: #0A0715;
             padding: 2rem;
-            border-radius: 0px;
+            border-radius: 24px;
         }
-
         footer {
             background: #040205;
             padding: 3rem 0;
             text-align: center;
         }
-
         @media (max-width: 900px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            section {
-                padding: 70px 0;
-            }
-            nav {
-                padding: 1rem 1.5rem;
-            }
-            nav.shrink {
-                padding: 0.6rem 1.5rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .problem-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .process-wrapper {
-                flex-direction: column;
-            }
-            .process-sticky {
-                position: static;
-            }
-            .offerings-list {
-                grid-template-columns: 1fr;
-            }
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .grid-6x4, .grid-6x2 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .grid-4x2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .custom-cursor, .cursor-ring {
-                display: none;
-            }
-            body {
-                cursor: auto;
-            }
+            .container { padding: 0 1.5rem; }
+            section { padding: 70px 0; }
+            nav { padding: 1rem 1.5rem; }
+            nav.shrink { padding: 0.6rem 1.5rem; }
+            .nav-links { display: none; }
+            .problem-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-wrapper { flex-direction: column; }
+            .process-sticky { position: static; }
+            .offerings-list { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .hero-bottom { flex-direction: column; align-items: flex-start; }
+            .custom-cursor, .cursor-ring { display: none; }
+            body { cursor: auto; }
         }
-
-        /* Custom cursor */
         .custom-cursor {
             width: 12px;
             height: 12px;
@@ -579,233 +450,212 @@
     </div>
 </nav>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero" id="hero">
     <div class="container hero-content">
-        <div class="hero-tag">AI Model Photography · Bangladesh</div>
-        <div class="hero-headline">Your product.<br>A professional model.<br><i>No photoshoot.</i></div>
-        <div class="hero-bottom">
-            <div class="hero-desc" style="max-width:380px">Transform any product image into catalog-ready fashion visuals with AI models. Choose everything — model, background, pose.</div>
-            <div class="stats">
-                <div class="stat-item"><div class="stat-number">48h</div><div class="stat-label">Delivery</div></div>
-                <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Custom</div></div>
-                <div class="stat-item"><div class="stat-number">Free</div><div class="stat-label">Sample</div></div>
-            </div>
-        </div>
+        <div class="hero-tag">AI Model Photography ·  Zero Limits</div>
+        <div class="hero-headline">Your product,<br />any model you dream.</div>
+        <div class="hero-desc">Transform any product image into catalog-ready fashion visuals with AI models — choose everything: <span class="highlight">model, background, pose, environment</span>.</div>
+        <div class="hero-desc" style="margin-top: 0.5rem;">✨ Describe your ideal model — any ethnicity, any country, any look, any character. <strong class="highlight">We generate it in 48 hours.</strong></div>
+        <div class="hero-bottom"><div class="stats"><div class="stat-item"><div class="stat-number">48h</div><div class="stat-label">Delivery</div></div><div class="stat-item"><div class="stat-number">∞</div><div class="stat-label">Any model</div></div><div class="stat-item"><div class="stat-number">Free</div><div class="stat-label">Sample</div></div></div></div>
     </div>
     <div class="scroll-hint">SCROLL<div class="scroll-line"></div></div>
 </section>
 
-<!-- Problem -->
-<section class="bg-secondary" style="background:#130F1F" id="problem">
-    <div class="container">
-        <div class="two-col-intro" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:3rem">
-            <h2 class="rv-left heading-font" style="font-size:clamp(2rem,3vw,2.6rem)">Traditional photoshoots / cost you time, money, / and momentum.</h2>
-            <p class="rv-right" style="color:var(--text-muted)">Booking models, studios, and retouching delays your launch. VELOX removes every obstacle.</p>
-        </div>
-        <div class="problem-grid">
-            <div class="p-card"><div class="card-number">01</div><h3>Model booking delays</h3><p style="font-size:0.85rem">No availability? No problem.</p></div>
-            <div class="p-card"><div class="card-number">02</div><h3>Venue & studio costs</h3><p>Save thousands per shoot.</p></div>
-            <div class="p-card"><div class="card-number">03</div><h3>Slow editing turnaround</h3><p>48h delivery standard.</p></div>
-            <div class="p-card"><div class="card-number">04</div><h3>Inconsistent brand look</h3><p>Unified aesthetic every time.</p></div>
-        </div>
-    </div>
+<!-- Problem Section -->
+<section style="background:#130F1F" id="problem">
+    <div class="container"><div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:3rem"><h2 class="rv-left heading-font" style="font-size:clamp(2rem,3vw,2.6rem)">Traditional photoshoots  limit you. BUT <br> VELOX gives you  unbounded creativity.</h2><p class="rv-right" style="color:var(--text-muted)">No more searching for the right model. You describe any ethnicity, any look — we generate instantly.</p></div>
+    <div class="problem-grid"><div class="p-card"><div class="card-number">01</div><h3>Model booking delays</h3><p>No availability? No problem.</p></div><div class="p-card"><div class="card-number">02</div><h3>Venue &amp; studio costs</h3><p>Save thousands per shoot.</p></div><div class="p-card"><div class="card-number">03</div><h3>Slow editing turnaround</h3><p>48h delivery standard.</p></div><div class="p-card"><div class="card-number">04</div><h3>Inconsistent brand look</h3><p>Unified aesthetic every time.</p></div></div></div>
 </section>
 
-<!-- Services -->
+<!-- Services Section -->
 <section id="services" style="background:var(--bg-primary)">
-    <div class="container">
-        <span class="section-label">One service. Every fashion category.</span>
-        <div class="services-grid" style="margin-top:1.5rem">
-            <div class="svc-card"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"> <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><h3>Apparel & Clothing</h3><p>Salwar, western, kids, formal</p></div>
-            <div class="svc-card"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><h3>Bags & Accessories</h3><p>Premium lifestyle imagery</p></div>
-            <div class="svc-card"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="2"/><path d="M12 2a15 15 0 0 0 0 20 15 15 0 0 0 0-20z"/></svg><h3>Watches & Jewellery</h3><p>Detail shots, elegance</p></div>
-            <div class="svc-card"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 4v16M6 4v16M4 8h16M4 16h16"/></svg><h3>Footwear</h3><p>Sneakers, heels, formal</p></div>
-            <div class="svc-card"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><h3>Sunglasses & Eyewear</h3><p>On-model editorial look</p></div>
-            <div class="svc-card"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M22 12h-4M6 12H2M12 22v-4"/><circle cx="12" cy="12" r="3"/></svg><h3>Perfume & Beauty</h3><p>Brand campaigns, cosmetics</p></div>
-        </div>
-    </div>
+    <div class="container"><span class="section-label">One service. Infinite model possibilities.</span><div class="services-grid" style="margin-top:1.5rem"><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><h3>Apparel &amp; Clothing</h3><p>Salwar, western, kids, formal</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><h3>Bags &amp; Accessories</h3><p>Premium lifestyle imagery</p></div><div class="svc-card"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9L6 4H18L21 9L12 20L3 9Z" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 4L12 20L18 4" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Watches &amp; Jewellery</h3><p>Detail shots, elegance</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 4v16M6 4v16M4 8h16M4 16h16"/></svg><h3>Footwear</h3><p>Sneakers, heels, formal</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><h3>Sunglasses &amp; Eyewear</h3><p>On-model editorial look</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M22 12h-4M6 12H2M12 22v-4"/><circle cx="12" cy="12" r="3"/></svg><h3>Perfume &amp; Beauty</h3><p>Brand campaigns</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg><h3>Fully Bespoke AI Models</h3><p>Any ethnicity, any country — you describe</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 8v4l3 3M12 2a10 10 0 1 0 10 10"/></svg><h3>Catalog-Ready in 48h</h3><p>Fast turnaround without compromise</p></div><div class="svc-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M12 2v12m-3-3l3 3 3-3"/></svg><h3>Unlimited Revisions</h3><p>Perfect until you say yes</p></div></div></div>
 </section>
 
 <!-- Showcase with Tabs -->
 <section id="showcase" style="background:var(--bg-tertiary)">
     <div class="container">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem">
-            <h2 class="heading-font">Our model portfolio.<br>Your visual reference.</h2>
-            <p class="rv-right">Explore the variety of AI fashion models available.</p>
-        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem"><h2 class="heading-font">Model showcase.<br />Your vision starts here.</h2><p class="rv-right">Masonry grid — 24 AI model visuals ready for you.</p></div>
         <div class="showcase-tabs">
             <button class="tab-btn active" data-tab="tab1">Model styles</button>
             <button class="tab-btn" data-tab="tab2">By category</button>
             <button class="tab-btn" data-tab="tab3">Client samples</button>
+            <button class="tab-btn" data-tab="tab4">✨ Create your own model</button>
         </div>
-        <!-- Tab 1: 24 slots -->
-        <div id="tab1" class="tab-content active-tab">
-            <div class="model-grid grid-6x4" id="modelStylesGrid"></div>
-        </div>
-        <div id="tab2" class="tab-content">
-            <div class="model-grid grid-6x2" id="categoriesGrid"></div>
-        </div>
-        <div id="tab3" class="tab-content">
-            <div class="model-grid grid-4x2" id="samplesGrid"></div>
-        </div>
+        <div id="tab1" class="tab-content active-tab"><div class="masonry-grid" id="masonryGridModelStyles"></div><div style="height: 4rem;"></div></div>
+        <div id="tab2" class="tab-content"><div class="masonry-grid" id="masonryGridByCategory"></div><div style="height: 4rem;"></div></div>
+        <div id="tab3" class="tab-content"><div class="masonry-grid" id="masonryGridClientSamples"></div><div style="height: 4rem;"></div></div>
+        <div id="tab4" class="tab-content"><div class="custom-model-card"><span class="section-label">✨ Describe, and we create</span><h3 style="font-size: 1.8rem; margin: 1rem 0;">Your dream model — any description</h3><p style="max-width: 600px; margin: 0 auto 1.5rem; color: var(--text-muted);">American, Bangladeshi, Latina, Southeast Asian, Middle Eastern, African, mixed, or fantasy character. Just tell us in your own words.</p><a href="https://wa.me/8801790330221?text=Hi%2C%20I'd%20like%20a%20free%20sample%20with%20a%20custom%20model%20description%3A" target="_blank" class="btn-sample" style="display: inline-block;">Send your description on WhatsApp →</a><p style="margin-top: 1.5rem; font-size: 0.8rem;">✨ Free sample available • 48h delivery • Unlimited revisions</p></div></div>
     </div>
 </section>
 
 <!-- Process -->
 <section id="process" style="background:var(--bg-secondary)">
-    <div class="container process-wrapper">
-        <div class="process-sticky"><h2 class="heading-font">Three steps.<br>48–72 hours.</h2><p class="rv-left" style="margin-top:1rem">From product photo to pro model image.</p></div>
-        <div class="process-steps">
-            <div class="step-row"><div class="card-number">01</div><h3>Send your product photo</h3><p>Any smartphone image works</p></div>
-            <div class="step-row"><div class="card-number">02</div><h3>Share your creative brief</h3><p>Model type, background, pose</p></div>
-            <div class="step-row"><div class="card-number">03</div><h3>Receive catalog-ready visuals</h3><p>Print & social media ready</p></div>
-            <div class="step-row"><div class="card-number">04</div><h3>Revisions until perfect</h3><p>Fine-tune with your team</p></div>
-        </div>
-    </div>
+    <div class="container process-wrapper"><div class="process-sticky"><h2 class="heading-font">Three steps.<br />Your model, your way.</h2><p class="rv-left" style="margin-top:1rem">From product photo to pro model image.</p></div><div class="process-steps"><div class="step-row"><div class="card-number">01</div><h3>Send your product photo</h3><p>Any smartphone image works</p></div><div class="step-row"><div class="card-number">02</div><h3>Describe your ideal model</h3><p>Any ethnicity, any country, any look — just text</p></div><div class="step-row"><div class="card-number">03</div><h3>Receive catalog-ready visuals</h3><p>Print &amp; social media ready</p></div><div class="step-row"><div class="card-number">04</div><h3>Revisions until perfect</h3><p>Fine-tune any detail</p></div></div></div>
 </section>
 
 <!-- Offerings -->
 <section id="offerings" style="background:var(--bg-primary)">
-    <div class="container">
-        <h2 class="heading-font rv">Everything in fashion, <br class="hide-mob">except saree.</h2>
-        <div class="offerings-list" style="margin-top:2rem">
-            <div class="offering-item"><span>Salwar Kameez</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Western Wear</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Kids Wear</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Formal & Office</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Footwear</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Sunglasses & Eyewear</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Watches & Jewellery</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Bags & Accessories</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Perfume & Beauty</span><span style="color:var(--gold)">●</span></div>
-            <div class="offering-item"><span>Casual & Streetwear</span><span style="color:var(--gold)">●</span></div>
-        </div>
-        <div style="border:1px solid var(--gold); padding:1.2rem; margin-top:2rem; text-align:center">
-            ℹ️ Saree photography is a specialty we reserve for our upcoming premium studio collection. For now, all other categories are supported.
-        </div>
-    </div>
+    <div class="container"><h2 class="heading-font rv">Everything in fashion, <br />except saree.*</h2><div class="offerings-list" style="margin-top:2rem"><div class="offering-item"><span>Salwar Kameez</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Western Wear</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Kids Wear</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Formal &amp; Office</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Footwear</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Sunglasses &amp; Eyewear</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Watches &amp; Jewellery</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Bags &amp; Accessories</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Perfume &amp; Beauty</span><span style="color:var(--gold)">●</span></div><div class="offering-item"><span>Casual &amp; Streetwear</span><span style="color:var(--gold)">●</span></div></div><div style="border:1px solid var(--gold); padding:1.2rem; margin-top:2rem; text-align:center">ℹ️ *Saree photography is a specialty for our upcoming premium studio collection. All other categories, any model you want.</div></div>
 </section>
 
 <!-- Why Choose Us -->
-<section style="background:var(--bg-tertiary)">
-    <div class="container">
-        <h2 class="heading-font">The advantage of<br>going AI-first.</h2>
-        <div class="why-grid" style="grid-template-columns:repeat(3,1fr); margin-top:2rem">
-            <div class="why-card"><div class="stat-number">48h</div><h3>Fast turnaround</h3><p>Express delivery</p></div>
-            <div class="why-card"><div class="stat-number">∞</div><h3>No scheduling limits</h3><p>Any time, any volume</p></div>
-            <div class="why-card"><div class="stat-number">You</div><h3>Full creative control</h3><p>Direct every detail</p></div>
-            <div class="why-card"><div class="stat-number">1/5</div><h3>Fraction of cost</h3><p>Save up to 80%</p></div>
-            <div class="why-card"><div class="stat-number">2in1</div><h3>Print & digital ready</h3><p>High-res optimized</p></div>
-            <div class="why-card"><div class="stat-number">✓</div><h3>Consistent brand look</h3><p>Unified AI aesthetics</p></div>
-        </div>
-    </div>
+<section style="background:var(--bg-tertiary)"><div class="container"><h2 class="heading-font">Why VELOX is different.<br />Unlimited model diversity.</h2><div class="why-grid" style="grid-template-columns:repeat(3,1fr); margin-top:2rem"><div class="why-card"><div class="stat-number">48h</div><h3>Fast turnaround</h3><p>Even for custom models</p></div><div class="why-card"><div class="stat-number">∞</div><h3>Any ethnicity</h3><p>American, Bangladeshi, Latina, etc.</p></div><div class="why-card"><div class="stat-number">You</div><h3>Full creative control</h3><p>Describe any look</p></div><div class="why-card"><div class="stat-number">1/5</div><h3>Fraction of cost</h3><p>Vs real photoshoots</p></div><div class="why-card"><div class="stat-number">2in1</div><h3>Print &amp; digital ready</h3><p>High-res optimized</p></div><div class="why-card"><div class="stat-number">✓</div><h3>Consistent brand look</h3><p>Unified AI aesthetics</p></div></div></div>
 </section>
 
-<!-- CTA Light -->
+<!-- CTA Light (unchanged, no image below) -->
 <section class="cta-light">
     <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:2rem">
-        <div><h2 class="heading-font" style="color:#0A0715">See it for yourself<br>before you commit.</h2><div style="margin:1rem 0">✓ Free sample image<br>✓ No hidden changes<br>✓ 48–72h delivery<br>✓ You choose everything<br>✓ Social & print ready</div></div>
-        <div class="cta-card"><div style="color:var(--gold)">✦ Free sample offer</div><h3 style="color:#FCFAF7; margin:1rem 0">Send a photo. Get your catalog image back.</h3><a href="https://wa.me/8801790330221?text=Hi%2C%20I'd%20like%20a%20free%20sample%20image%20for%20my%20product" target="_blank" class="btn-sample" style="background:var(--gold); width:100%; text-align:center; display:block">Claim Free Sample →</a><p style="color:#A99FBF; font-size:0.7rem; margin-top:1rem">Mahir Daiyan Siyam · 01790330221 · Reply within 24h</p></div>
+        <div><h2 class="heading-font" style="color:#0A0715">Your dream model.<br />Your product. Free sample.</h2><div style="margin:1rem 0">✓ Free sample image (first order)<br />✓ Any model origin, any description<br />✓ 48h delivery<br />✓ You choose everything — background, pose, lighting<br />✓ Social &amp; print ready</div></div>
+        <div class="cta-card"><div style="color:var(--gold)">✦ No commitment. Just try.</div><h3 style="color:#FCFAF7; margin:1rem 0">Send a product photo + describe your ideal model. We'll create it for free.</h3><a href="https://wa.me/8801790330221?text=Hi%2C%20I'd%20like%20a%20free%20sample%20image%20for%20my%20product.%20My%20dream%20model%20is%3A" target="_blank" class="btn-sample" style="background:var(--gold); width:100%; text-align:center; display:block">Claim Free Sample →</a><p style="color:#A99FBF; font-size:0.7rem; margin-top:1rem">Mahir Daiyan Siyam · 01790330221 · Reply within 24h</p></div>
     </div>
 </section>
 
-<footer><div class="container"><div class="logo">VELOX<span>.</span></div><p style="margin:1rem 0">© 2025 VELOX. All rights reserved. AI model photography studio, Bangladesh.</p><a href="https://wa.me/8801790330221" target="_blank" style="color:var(--gold)">WhatsApp +8801790330221</a></div></footer>
+<footer>
+    <div class="container"><div class="logo">VELOX<span>.</span></div><p style="margin:1rem 0">© 2025 VELOX. Unlimited AI model generation — any origin, any look. 48h delivery.</p><a href="https://wa.me/8801790330221" target="_blank" style="color:var(--gold)">WhatsApp +8801790330221</a></div>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-    // --- 3D ROYALTY SCENE ---
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x0A0715);
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 0, 12);
-    const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x0A0715, 1);
-    const canvasElem = renderer.domElement;
-    canvasElem.style.position = 'fixed';
-    canvasElem.style.top = '0';
-    canvasElem.style.left = '0';
-    canvasElem.style.zIndex = '0';
-    canvasElem.style.pointerEvents = 'none';
-    document.body.insertBefore(canvasElem, document.body.firstChild);
-
-    // Gold torus knot
-    const geometry = new THREE.TorusKnotGeometry(1.8, 0.3, 200, 32, 3, 4);
-    const material = new THREE.MeshStandardMaterial({ color: 0xD4AF37, emissive: 0x3D2B63, emissiveIntensity: 0.5, metalness: 0.8, roughness: 0.3, wireframe: false });
-    const knot = new THREE.Mesh(geometry, material);
-    scene.add(knot);
-    
-    // Particles
-    const particleCount = 180;
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlePositions = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount; i++) {
-        particlePositions[i*3] = (Math.random() - 0.5) * 20;
-        particlePositions[i*3+1] = (Math.random() - 0.5) * 12;
-        particlePositions[i*3+2] = (Math.random() - 0.5) * 15 - 5;
-    }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-    const particleMaterial = new THREE.PointsMaterial({ color: 0xD4AF37, size: 0.08, transparent: true, opacity: 0.5 });
-    const particleSystem = new THREE.Points(particlesGeometry, particleMaterial);
-    scene.add(particleSystem);
-    
-    const ambientLight = new THREE.AmbientLight(0x2A1B4D);
-    scene.add(ambientLight);
-    const dirLight = new THREE.DirectionalLight(0xffe6aa, 1);
-    dirLight.position.set(2,5,3);
-    scene.add(dirLight);
-    const backLight = new THREE.PointLight(0x8a6eff, 0.4);
-    backLight.position.set(-2,1,-4);
-    scene.add(backLight);
-    
-    let mouseX = 0, mouseY = 0;
-    document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-        mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-    });
-    
-    function animate() {
-        requestAnimationFrame(animate);
-        knot.rotation.x += 0.003;
-        knot.rotation.y += 0.005;
-        particleSystem.rotation.y += 0.0005;
-        particleSystem.rotation.x += 0.0003;
-        camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.03;
-        camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.03;
-        camera.lookAt(0, 0, 0);
-        renderer.render(scene, camera);
-    }
-    animate();
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
+    // 3D SCENE
+    try {
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0A0715);
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 0, 12);
+        const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setClearColor(0x0A0715, 1);
+        const canvasElem = renderer.domElement;
+        canvasElem.style.position = 'fixed';
+        canvasElem.style.top = '0';
+        canvasElem.style.left = '0';
+        canvasElem.style.zIndex = '0';
+        canvasElem.style.pointerEvents = 'none';
+        document.body.insertBefore(canvasElem, document.body.firstChild);
+
+        const geometry = new THREE.TorusKnotGeometry(1.8, 0.3, 200, 32, 3, 4);
+        const material = new THREE.MeshStandardMaterial({ color: 0xD4AF37, emissive: 0x3D2B63, emissiveIntensity: 0.4, metalness: 0.7, roughness: 0.4 });
+        const knot = new THREE.Mesh(geometry, material);
+        scene.add(knot);
+        const particleCount = 160;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlePositions = new Float32Array(particleCount * 3);
+        for (let i = 0; i < particleCount; i++) {
+            particlePositions[i*3] = (Math.random() - 0.5) * 20;
+            particlePositions[i*3+1] = (Math.random() - 0.5) * 12;
+            particlePositions[i*3+2] = (Math.random() - 0.5) * 15 - 5;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+        const particleSystem = new THREE.Points(particlesGeometry, new THREE.PointsMaterial({ color: 0xD4AF37, size: 0.07, transparent: true, opacity: 0.5 }));
+        scene.add(particleSystem);
+        const ambientLight = new THREE.AmbientLight(0x2A1B4D);
+        scene.add(ambientLight);
+        const dirLight = new THREE.DirectionalLight(0xffe6aa, 1);
+        dirLight.position.set(2,5,3);
+        scene.add(dirLight);
+        const backLight = new THREE.PointLight(0x8a6eff, 0.4);
+        backLight.position.set(-2,1,-4);
+        scene.add(backLight);
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = (e.clientX / window.innerWidth) * 2 - 1; mouseY = (e.clientY / window.innerHeight) * 2 - 1; });
+        function animate() {
+            requestAnimationFrame(animate);
+            knot.rotation.x += 0.003;
+            knot.rotation.y += 0.005;
+            particleSystem.rotation.y += 0.0005;
+            particleSystem.rotation.x += 0.0003;
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.03;
+            camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.03;
+            camera.lookAt(0, 0, 0);
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+    } catch(e) { console.warn(e); }
+
+    // Model styles (24 images)
+    const modelImageUrls = [
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995156/_A_hyper-realistic_full-body_shot_of_202605051304_x774kt.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995153/_A_hyper-realistic_full-body_fashion_photograph_202605051304_rlehlu.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777996153/Middle_Eastern___A_handsome_Middle_202605052146_vyyvhg.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995155/__prompt____A_beautiful_South_202605041201_nrtmix.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777997814/Woman_carrying_burgundy_handbag_202605052216_aoe5fa.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995150/A_beautiful_young_South_Asian_202605051232_f1qtev.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995154/WhatsApp_Image_2026-05-05_at_9.27.01_PM_1_dckfmj.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995151/WhatsApp_Image_2026-05-05_at_9.27.02_PM_chllzn.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995149/_A_natural_looking_female_model_202605041233_jjjvo6.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995147/WhatsApp_Image_2026-05-05_at_9.27.02_PM_1_evjuvx.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995150/use_sunlight_2K_202605051247_scbxqo.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777996149/Prompt__Editorial_portrait_of_a_202605052141_ubniaf.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777997067/__portfolio_slots________slot___202605052137_qkjwwk.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995154/__prompt____Luxury_female_model_202605041229_gk0gth.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995153/__prompt____Luxury_female_model_202605041216_dgmosa.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995153/Luxury_female_model_wearing_premium_202605041231_j6zbei.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995150/shot_on_Fujifilm_Quicksnap_2K_202605051310_s8hspl.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995159/A_stylish_Bangladeshi_young_man_202605051310_qt3gco.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995150/A_trendy_Gen-Z_female_model_202605051310_lkp1hj.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995155/A_hyper-realistic_full-body_shot_of_202605051247_wkfmbm.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777997056/Untitled_design_7_ibo0hx.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777996155/__prompt____Ultra-realistic_full-body_studio_202605052147_emybxf.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777997813/Model_walking_on_city_street_202605052216_npyah9.jpg",
+        "https://res.cloudinary.com/deklqluop/image/upload/f_auto,q_auto/v1777995151/clean_smooth_skin_with_natural_202605041247_xm2svp.jpg"
+    ];
+    const masonryModel = document.getElementById("masonryGridModelStyles");
+    for (let url of modelImageUrls) {
+        const div = document.createElement("div"); div.className = "masonry-item";
+        const img = document.createElement("img"); img.src = url; img.loading = "lazy";
+        div.appendChild(img); masonryModel.appendChild(div);
+    }
+
+    // By category (12) with varied images from Unsplash
+    const categoryNames = ["Salwar Kameez","Western Wear","Kids Wear","Formal","Footwear","Sunglasses","Watches","Jewellery","Bags","Perfume","Beauty","Casual"];
+    const catImages = [
+        "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=450&fit=crop",
+        "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&h=750&fit=crop",
+        "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=900&fit=crop",
+        "https://images.unsplash.com/photo-1549298916-f52d724204b4?w=600&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&h=700&fit=crop",
+        "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&h=850&fit=crop",
+        "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&h=750&fit=crop",
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&h=650&fit=crop",
+        "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600&h=800&fit=crop"
+    ];
+    const masonryCat = document.getElementById("masonryGridByCategory");
+    for (let i = 0; i < 12; i++) {
+        const div = document.createElement("div"); div.className = "masonry-item";
+        const img = document.createElement("img"); img.src = catImages[i]; img.alt = categoryNames[i]; img.loading = "lazy";
+        div.appendChild(img); masonryCat.appendChild(div);
+    }
+
+    // Client samples (8)
+    const sampleImages = [
+        "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&h=800&fit=crop",
+        "https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?w=600&h=900&fit=crop",
+        "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=600&h=650&fit=crop",
+        "https://images.unsplash.com/photo-1529139574466-a5e7ac7e36d4?w=600&h=750&fit=crop",
+        "https://images.unsplash.com/photo-1544441893-675973e31985?w=600&h=850&fit=crop",
+        "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=900&fit=crop",
+        "https://images.unsplash.com/photo-1549298916-f52d724204b4?w=600&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=800&fit=crop"
+    ];
+    const masonrySample = document.getElementById("masonryGridClientSamples");
+    for (let i = 0; i < 8; i++) {
+        const div = document.createElement("div"); div.className = "masonry-item";
+        const img = document.createElement("img"); img.src = sampleImages[i]; img.alt = `Client Sample ${i+1}`; img.loading = "lazy";
+        div.appendChild(img); masonrySample.appendChild(div);
+    }
+
+    // Random margins for better masonry feel
+    document.querySelectorAll('.masonry-item').forEach(item => {
+        item.style.marginBottom = Math.floor(Math.random() * 40) + 10 + 'px';
     });
-    
-    // --- populate placeholder slots ---
-    const categories = ["Ethnic—Female", "Western—Female", "Casual—Female", "Formal—Female", "Editorial—Female", "Luxury—Female", "Ethnic—Male", "Western—Male", "Casual—Male", "Formal—Male", "Streetwear—Male", "Editorial—Male", "Kids—Girl", "Kids—Boy", "Studio—White BG", "Outdoor—Urban", "Outdoor—Nature", "Luxury Interior", "Accessories Close-up", "Footwear—On Foot", "Watch—Wrist Shot", "Perfume—Lifestyle", "Sunglasses—Editorial", "Bag—Campaign"];
-    const modelGrid = document.getElementById("modelStylesGrid");
-    for(let i=0; i<24; i++) {
-        let div = document.createElement('div'); div.className = "slot";
-        div.innerHTML = `<div class="slot-number">${String(i+1).padStart(2,'0')}</div><span class="coming">Coming Soon</span><div class="slot-label">${categories[i]}</div>`;
-        modelGrid.appendChild(div);
-    }
-    const prodCategories = ["Salwar Kameez","Western Wear","Kids Wear","Formal","Footwear","Sunglasses","Watches","Jewellery","Bags","Perfume","Beauty","Casual"];
-    const catGrid = document.getElementById("categoriesGrid");
-    for(let i=0; i<12; i++) {
-        let div = document.createElement('div'); div.className = "slot"; div.style.aspectRatio="1/1";
-        div.innerHTML = `<span class="coming">${prodCategories[i]}</span><div style="margin-top:8px; font-size:0.6rem">Coming Soon</div>`;
-        catGrid.appendChild(div);
-    }
-    const sampleGrid = document.getElementById("samplesGrid");
-    for(let i=1; i<=8; i++) {
-        let div = document.createElement('div'); div.className = "sample-slot";
-        div.innerHTML = `<div class="sample-badge">Sample 0${i}</div><span class="coming">Coming Soon</span>`;
-        sampleGrid.appendChild(div);
-    }
-    
+
     // Tabs logic
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
@@ -816,12 +666,11 @@
             btn.classList.add('active');
             contents.forEach(c => c.classList.remove('active-tab'));
             document.getElementById(tabId).classList.add('active-tab');
-            // re-trigger observer on new visible elements
             observeAll();
         });
     });
-    
-    // IntersectionObserver (single, re-trigger)
+
+    // Scroll reveal observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) entry.target.classList.add('in');
@@ -830,12 +679,11 @@
     }, { threshold: 0.1 });
     function observeAll() {
         document.querySelectorAll('.rv, .rv-left, .rv-right, .hero-tag, .hero-headline, .hero-bottom').forEach(el => observer.observe(el));
-        document.querySelectorAll('.svc-card, .p-card, .why-card, .step-row, .offering-item').forEach(el => observer.observe(el));
-        document.querySelectorAll('.rv, .rv-left, .rv-right').forEach(el => observer.observe(el));
+        document.querySelectorAll('.svc-card, .p-card, .why-card, .step-row, .offering-item, .masonry-item').forEach(el => observer.observe(el));
     }
     observeAll();
-    
-    // Custom cursor (desktop)
+
+    // Custom cursor
     if(window.innerWidth > 900) {
         const cursorDot = document.createElement('div'); cursorDot.className = 'custom-cursor'; document.body.appendChild(cursorDot);
         const cursorRing = document.createElement('div'); cursorRing.className = 'cursor-ring'; document.body.appendChild(cursorRing);
@@ -845,13 +693,11 @@
         const interactive = document.querySelectorAll('a, button, .btn-sample, .tab-btn');
         interactive.forEach(el => { el.addEventListener('mouseenter', () => { cursorDot.style.width = '20px'; cursorDot.style.height = '20px'; cursorRing.style.width = '60px'; cursorRing.style.height = '60px'; }); el.addEventListener('mouseleave', () => { cursorDot.style.width = '12px'; cursorDot.style.height = '12px'; cursorRing.style.width = '40px'; cursorRing.style.height = '40px'; }); });
     }
-    // Nav shrink
     window.addEventListener('scroll', () => { const nav = document.getElementById('navbar'); if(window.scrollY > 80) nav.classList.add('shrink'); else nav.classList.remove('shrink'); });
-    // Card tilt effect (simple for perf)
     document.querySelectorAll('.p-card, .svc-card').forEach(card => {
         card.addEventListener('mousemove', (e) => { const rect = card.getBoundingClientRect(); const x = (e.clientX - rect.left) / rect.width - 0.5; const y = (e.clientY - rect.top) / rect.height - 0.5; card.style.transform = `perspective(700px) rotateY(${x*12}deg) rotateX(${-y*12}deg) scale(1.02)`; });
         card.addEventListener('mouseleave', () => { card.style.transform = 'perspective(700px) rotateY(0deg) rotateX(0deg) scale(1)'; });
     });
 </script>
 </body>
-</html> 
+</html>
